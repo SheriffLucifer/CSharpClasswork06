@@ -2,6 +2,11 @@
 //Не используя рекурсию, выведите первые N чисел Фибоначчи. 
 //Первые два числа Фибоначчи: 0 и 1.
 //
+
+int n = GetNumberFromUser($"Введите число ", "Ошибка ввода!");
+int[] Fib_Array = CreateArray(n);
+PrintArray(Fib_Array, n);
+
 int GetNumberFromUser(string message, string errorMessage)
 {
     while (true)
@@ -26,14 +31,11 @@ int[] CreateArray(int size)
     return res;
 }
 
-void PrintArray(int[] arr)
+void PrintArray(int[] arr, int n)
 {
+    Console.Write($"Если N = {n} -> ");
     for (int i = 0; i < arr.Length; i++)
     {
         Console.Write($"{arr[i]} ");
     }
 }
-
-int n = GetNumberFromUser($"Введите число ", "Ошибка ввода!");
-int[] Fib_Array = CreateArray(n);
-PrintArray(Fib_Array);
